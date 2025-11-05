@@ -38,9 +38,3 @@ Guia de **Node.js + Express** para criar APIs simples. Traz:
 -   Persistência didática em ficheiro JSON (sem base de dados)
 -   Validação opcional com Zod e tratamento central de erros
 -   Secção opcional de **EJS** (templates no servidor) para páginas simples
-
-> Nota: o ficheiro de Node/Express funciona como **guia** com blocos prontos a colar nos ficheiros certos; não é para executar diretamente sem separar por pastas.
-
----
-
-Bom estudo! Estes materiais destinam‑se a uso **pedagógico** em aula e projetos de treino.
