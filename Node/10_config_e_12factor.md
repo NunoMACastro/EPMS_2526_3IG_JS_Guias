@@ -1,5 +1,13 @@
 # 10) Variáveis de ambiente e 12-Factor
 
+Variáveis de ambiente são pares chave-valor que o sistema operativo disponibiliza para o teu programa. Em Node.js, acedes a elas através de `process.env`.
+
+Normalmente são usadas para configurar aspetos do programa que podem variar entre ambientes (desenvolvimento, produção, testes), como portas, URLs de bases de dados, chaves de API, etc.
+
+---
+
+12-Factor é um conjunto de boas práticas para construir aplicações web escaláveis e fáceis de manter. Uma das suas recomendações principais é armazenar a configuração da aplicação em variáveis de ambiente.
+
 ## .env (exemplo)
 
 ```
@@ -11,6 +19,7 @@ CORS_CREDENTIALS=false
 ```
 
 No código:
+
 ```js
 const PORT = Number(process.env.PORT || 3000);
 ```
@@ -20,23 +29,24 @@ const PORT = Number(process.env.PORT || 3000);
 ```js
 // src/utils/config.js
 function reqEnv(name, def = undefined) {
-  const v = process.env[name] ?? def;
-  if (v === undefined) throw new Error(`Falta variável de ambiente: ${name}`);
-  return v;
+    const v = process.env[name] ?? def;
+    if (v === undefined) throw new Error(`Falta variável de ambiente: ${name}`);
+    return v;
 }
 
 export const config = Object.freeze({
-  env: process.env.NODE_ENV || "development",
-  port: Number(process.env.PORT || 3000),
-  corsOrigin: process.env.CORS_ORIGIN || "*",
-  corsCredentials: process.env.CORS_CREDENTIALS === "true",
+    env: process.env.NODE_ENV || "development",
+    port: Number(process.env.PORT || 3000),
+    corsOrigin: process.env.CORS_ORIGIN || "*",
+    corsCredentials: process.env.CORS_CREDENTIALS === "true",
 });
 ```
 
 ## Boas práticas 12-Factor
-- Nada de hardcode de segredos e URLs.
-- Config por ambiente (.env ou variáveis da plataforma).
-- Logs como streams (evitar console espalhado).
+
+-   Nada de hardcode de segredos e URLs.
+-   Config por ambiente (.env ou variáveis da plataforma).
+-   Logs como streams (evitar console espalhado).
 
 ## Porque usar variáveis de ambiente?
 
