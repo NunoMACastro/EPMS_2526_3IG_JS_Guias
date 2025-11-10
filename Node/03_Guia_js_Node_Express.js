@@ -20,6 +20,16 @@ TOC
 [10] Variáveis de ambiente (.env), 12‑Factor e config
 [11] Testes rápidos (Supertest + Vitest/Jest) — visão geral
 
+Glossário rápido (mostra aos alunos antes de mergulhar no código):
+— **Request**: pedido que chega do browser/app móvel. Traz método (GET/POST...), URL, headers e body.
+— **Response**: resposta que o servidor devolve com um código (200, 404...) e dados (JSON, HTML, ficheiro).
+— **Middleware**: função que corre entre o pedido entrar e a resposta sair. Pode ler/modificar `req` e `res` ou terminar o pedido.
+— **Router**: conjunto de rotas relacionadas (ex.: tudo sobre `/api/v1/todos`). Ajuda a dividir a aplicação em módulos.
+— **Controller**: função que conhece a regra do endpoint. Lê dados do pedido, chama serviços e decide o que devolver.
+— **Service**: camada onde vivem as regras de negócio (por exemplo, “um todo precisa de título”).
+— **Repository**: módulo que sabe falar com o armazenamento (ficheiro JSON, base de dados…).
+— **Handler de erro**: middleware especial para responder quando algo corre mal.
+
 =============================================================================
 [0] SETUP RÁPIDO DE PROJETO
 =============================================================================
@@ -744,3 +754,9 @@ export default pages;
 // 5) Para layouts sem plugin, substitui o layout por includes manuais:
 //    header.ejs + <%- include(...) %> + footer.ejs.
 // ============================================================================ */
+
+/*
+## Changelog
+-   **v1.1.0 — 2025-11-10**
+    -   Adicionado glossário introdutório e criada secção de changelog para o guia completo.
+*/
