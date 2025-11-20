@@ -16,6 +16,10 @@ Este repositório junta os apontamentos usados nas aulas de Programação para o
 
 ---
 
+## Git
+
+A pasta `Git/` contém modelos de ficheiros `.gitignore` para vários stacks e um guia rápido de comandos essenciais: [Git - Guia](Git/git-guia.md).
+
 ## JavaScript — Capítulos
 
 ### Fundamentos (01‑12)
@@ -53,10 +57,6 @@ Cada ficheiro tem exemplos prontos a colar no DevTools/Node e termina com desafi
     - Sessão 3: 08‑10 (objetos, exceções, funções)
     - Sessão 4: 11‑12 (HOFs e módulos)
     - Sessões 5‑6: 13‑17 (OOP, async, DOM, Fetch, extras)
-2. **Método**
-    - Lê o capítulo rapidamente.
-    - Executa os snippets na consola do browser ou em Node (`node ficheiro.js`).
-    - Resolve os desafios antes de avançar.
 
 ---
 
